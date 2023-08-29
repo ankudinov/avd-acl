@@ -13,7 +13,16 @@ jobs:
       - name: Checkout code ✅
         uses: actions/checkout@v3
 
+      - name: Check if pages must be re-build 🤔
+        uses: dorny/paths-filter@v2
+        id: ghpages-filter
+        with:
+          filters: |
+            workflows:
+              - 'marp_slides.md'
+
       - name: Copy images 🖼️
+        if: steps.ghpages-filter.outputs.workflows == 'true'
         run: |
           mkdir build && cp -R img build/img
           if [ -f excalidraw ]; then
@@ -21,6 +30,7 @@ jobs:
           fi
 
       - name: Build HTML from marp_slides.md 🔨
+        if: steps.ghpages-filter.outputs.workflows == 'true'
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
           args:  --html marp_slides.md -o build/index.html
@@ -28,6 +38,7 @@ jobs:
           MARP_USER: root:root
 
       - name: Build PDF from marp_slides.md 🔨
+        if: steps.ghpages-filter.outputs.workflows == 'true'
         uses: docker://marpteam/marp-cli:v3.0.2
         with:
           args:  --html --allow-local-files marp_slides.md -o build/avd_extended_workshop.pdf
@@ -35,7 +46,7 @@ jobs:
           MARP_USER: root:root
 
       - name: Deploy production 🚀
-        if: ${{ github.event_name == 'push' }}
+        if: ${{ github.event_name == 'push' }} && steps.ghpages-filter.outputs.workflows == 'true'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
