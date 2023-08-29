@@ -1,0 +1,24 @@
+---
+name: build-all-containers
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+
+  build_base:
+
+    uses: ./.github/workflows/container_build_template.yml
+
+    strategy:
+      matrix:
+        container: [acl-avd-demo]
+        include:
+          - container: "acl-avd-demo"
+            container_tags: latest
+
+    with:
+      container_name: ${{ matrix.container }}
+      container_tags: ${{ matrix.container_tags }}
