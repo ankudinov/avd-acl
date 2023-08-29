@@ -71,7 +71,7 @@ jobs:
         uses: devcontainers/ci@v0.3
         with:
           subFolder: avd-containers/${{ inputs.container_name }}
-          imageName: ghcr.io/ankudinov/acl-avd/${{ inputs.container_name }}
+          imageName: ghcr.io/ankudinov/avd-acl/${{ inputs.container_name }}
           imageTag: latest
           platform: ${{ inputs.platform }}
           push: always
