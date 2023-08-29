@@ -10,10 +10,6 @@
     execute_tasks: false
   tasks:
 
-    - name: Generate intended variables
-      import_role:
-        name: eos_designs
-
     - name: Generate device intended config and documentation
       import_role:
         name: eos_cli_config_gen
