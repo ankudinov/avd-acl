@@ -46,7 +46,7 @@ jobs:
           MARP_USER: root:root
 
       - name: Deploy production 🚀
-        if: ${{ github.event_name == 'push' }} && steps.ghpages-filter.outputs.workflows == 'true'
+        if: ${{ github.event_name == 'push' && steps.ghpages-filter.outputs.workflows == 'true' }}
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
