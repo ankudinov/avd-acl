@@ -116,3 +116,20 @@ All photos are taken from [Pexels](https://www.pexels.com/) and [Unsplash](https
 
 </div>
 </div>
+
+---
+
+# The Demo
+
+<style scoped>section {font-size: 22px;}</style>
+
+- Start Github Codespace with AVD pre-installed
+- Add TCP rule to hostvars
+- Run playbook to generate ACL config
+- Fail playbook with limit to demonstrate error handling
+
+![bg right fit](img/acl-vars-example.png)
+
+---
+
+Q&A
