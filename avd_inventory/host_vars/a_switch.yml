@@ -10,6 +10,10 @@ ip_access_lists:
         source: any
         destination: any
         log: true
+      # - action: permit
+      #   protocol: tcp
+      #   source: any
+      #   destination: any
       - action: permit
         protocol: icmp
         source: any
