@@ -132,4 +132,15 @@ All photos are taken from [Pexels](https://www.pexels.com/) and [Unsplash](https
 
 ---
 
+# Potential Challenges
+
+- A lot of testing is required to ensure that solution works as expected
+- Possible caveats:
+  - discovery time with sFlow
+  - host moves
+  - hardware limits
+  - etc.
+
+---
+
 Q&A
