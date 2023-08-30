@@ -77,7 +77,7 @@ All photos are taken from [Pexels](https://www.pexels.com/) and [Unsplash](https
 
 # Building Blocks
 
-![](excalidraw/building-blocks.png)
+![](img/building-blocks.png)
 
 ---
 
@@ -112,7 +112,7 @@ All photos are taken from [Pexels](https://www.pexels.com/) and [Unsplash](https
 </div>
 <div>
 
-![ ](excalidraw/provisioning-building-blocks.png)
+![ ](img/provisioning-building-blocks.png)
 
 </div>
 </div>
